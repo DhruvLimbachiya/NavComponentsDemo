@@ -2,4 +2,13 @@
     <string name="app_name">NavigationComponent Example</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_username">Username</string>
+    <string name="header_login_screen">Login Screen</string>
+    <string name="hint_password">Password</string>
+    <string name="button_text_login">Login</string>
+    <string name="text_new_register_here">New? Register Here!</string>
+    <string name="header_reg_screen">Registration</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="button_text_register">Register</string>
 </resources>
