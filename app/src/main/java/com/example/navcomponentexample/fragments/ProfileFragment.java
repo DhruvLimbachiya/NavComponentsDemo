@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.navcomponentexample.R;
 
+
 public class ProfileFragment extends Fragment {
 
     @Override
