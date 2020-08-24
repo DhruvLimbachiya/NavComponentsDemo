@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.navcomponentexample.fragments.LoginFragment"
-        android:label="fragment_login"
+        android:label="Login Fragment"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.example.navcomponentexample.fragments.RegistrationFragment"
-        android:label="fragment_registration"
+        android:label="Registration Fragment"
         tools:layout="@layout/fragment_registration" >
         <action
             android:id="@+id/action_registrationFragment_to_loginFragment"
@@ -32,7 +32,7 @@
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.navcomponentexample.MainActivity"
-        android:label="activity_main"
+        android:label="MainActivity"
         tools:layout="@layout/activity_main" >
         <argument
             android:name="username"
