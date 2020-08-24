@@ -14,4 +14,8 @@
     <string name="error_username">Username required</string>
     <string name="error_password">Password required</string>
     <string name="error_email">Email require</string>
+    <string name="menu_text_logout">Logout</string>
+    <string name="menu_text_dashboard">Dashboard</string>
+    <string name="menu_text_contact">Contact</string>
+    <string name="menu_text_profile">Profile</string>
 </resources>
