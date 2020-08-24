@@ -11,4 +11,6 @@
     <string name="hint_name">Name</string>
     <string name="hint_email">Email</string>
     <string name="button_text_register">Register</string>
+    <string name="error_username">Username required</string>
+    <string name="error_password">Password required</string>
 </resources>
