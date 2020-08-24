@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.navcomponentexample.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.menu_logout:
-                        Toast.makeText(MainActivity.this, "Logout!", Toast.LENGTH_SHORT).show();
+                        Snackbar.make(binding.mainDrawerLayout,getString(R.string.logout_message),Snackbar.LENGTH_SHORT).show();
                         break;
 
                 }
