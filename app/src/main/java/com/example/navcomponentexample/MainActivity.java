@@ -3,6 +3,7 @@ package com.example.navcomponentexample;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -12,10 +13,12 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.navcomponentexample.databinding.ActivityMainBinding;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
 
         setSupportActionBar(binding.toolbar);
+        getSupportActionBar().setTitle(getResources().getString(R.string.menu_text_dashboard));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -86,7 +90,24 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.menu_logout:
-                        Snackbar.make(binding.mainDrawerLayout,getString(R.string.logout_message),Snackbar.LENGTH_SHORT).show();
+                        // Display Alert DailogBox on Logout Menu Clicked.
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this)
+                                .setMessage(R.string.logout_message)
+                                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        onBackPressed();
+                                    }
+                                })
+                                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.dismiss();
+                                    }
+                                });
+
+                        AlertDialog alertDialog = builder.create();
+                        alertDialog.show();
                         break;
 
                 }
