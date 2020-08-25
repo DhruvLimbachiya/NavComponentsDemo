@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="user"
+            type="com.example.navcomponentexample.pojo.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,7 +41,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name_textview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@={user.name}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,6 +60,7 @@
                 android:id="@+id/email_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@={user.email}"
                 android:inputType="textWebEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,7 +80,8 @@
                 android:id="@+id/password_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:text="@={user.password}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
