@@ -2,6 +2,7 @@ package com.example.navcomponentexample;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -11,6 +12,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,11 +22,15 @@ import com.example.navcomponentexample.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
 
     ActivityMainBinding binding;
+    public static MainActivityArgs args;
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         setUpDrawerNavigation();
+
+        // Retrieve the data sent by LoginFragment from MainActivityArgs Bundle.
+        args = MainActivityArgs.fromBundle(Objects.requireNonNull(getIntent().getExtras()));
+
     }
 
     private void setUpDrawerNavigation() {
@@ -60,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 
                 int menuId = menuItem.getItemId();
-                
+
                 switch (menuId){
                     
                     case R.id.menu_dashboard:
