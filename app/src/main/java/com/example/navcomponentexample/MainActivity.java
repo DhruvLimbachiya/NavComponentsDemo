@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                                 .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
-                                        onBackPressed();
+                                        navController.navigate(R.id.mainToAuthActivity);
                                     }
                                 })
                                 .setNegativeButton("NO", new DialogInterface.OnClickListener() {
