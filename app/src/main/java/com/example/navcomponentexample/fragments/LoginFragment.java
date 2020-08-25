@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.navcomponentexample.R;
 import com.example.navcomponentexample.databinding.FragmentLoginBinding;
+import com.example.navcomponentexample.pojo.User;
 
 import static com.example.navcomponentexample.fragments.LoginFragmentDirections.*;
 
@@ -26,12 +27,16 @@ public class LoginFragment extends Fragment {
 
     FragmentLoginBinding binding;
     NavController navController;
+    User user;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_login, container, false);
+
+        user = new User();
+        binding.setUser(user);
 
         return binding.getRoot();
     }
@@ -76,9 +81,11 @@ public class LoginFragment extends Fragment {
      */
     private void logIn() {
 
+        user = binding.getUser();
+
         // Navigate to MainActivity with successful login using SafeArgs.
         ActionLoginFragmentToMainActivity action = LoginFragmentDirections.actionLoginFragmentToMainActivity();
-        action.setUsername(binding.usernameTextview.getText().toString().trim()); // Transferring "username" using SafeArgs
+        action.setUsername(user.getName()); // Transferring "username" using SafeArgs
 
         navController.navigate(action);
     }
